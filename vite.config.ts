@@ -9,4 +9,9 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./vitest.setup.ts"],
   },
+  define: {
+    "import.meta.env.VITE_API_BASE_URL": JSON.stringify(
+      "http://localhost:3000"
+    ),
+  },
 });
