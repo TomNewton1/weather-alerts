@@ -2,7 +2,7 @@ import { expect, test } from "vitest";
 import { render } from "@testing-library/react";
 import App from "../App";
 
-test("Wordle title renders", () => {
+test("App title renders", () => {
   const app = render(<App />);
   const title = app.getByText("Weather Alerts");
   expect(title).not.toBeNull();
