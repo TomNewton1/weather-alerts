@@ -1,14 +1,25 @@
-import { useEffect } from "react";
+import { Box } from "@mui/material";
 import "./App.css";
+import { AlertsTable } from "./components/Alerts/AlertsTable";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
-  useEffect(() => {
-    fetch("https://api.weather.gov/alerts/active");
-  }, []);
   return (
-    <>
-      <h1>Weather Alerts</h1>
-    </>
+    <QueryClientProvider client={queryClient}>
+      <Box
+        sx={{
+          height: "100vh",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <h1>National Weather Alerts Dashboard</h1>
+        <AlertsTable />
+      </Box>
+    </QueryClientProvider>
   );
 }
 

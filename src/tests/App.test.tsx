@@ -4,6 +4,6 @@ import App from "../App";
 
 test("App title renders", () => {
   const app = render(<App />);
-  const title = app.getByText("Weather Alerts");
+  const title = app.getByText("National Weather Alerts Dashboard");
   expect(title).not.toBeNull();
 });
