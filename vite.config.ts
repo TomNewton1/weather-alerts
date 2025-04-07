@@ -1,5 +1,6 @@
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
+import { loadEnv } from "vite";
 
 export default defineConfig({
   plugins: [react()],
@@ -8,10 +9,6 @@ export default defineConfig({
     environment: "jsdom",
     globals: true,
     setupFiles: ["./vitest.setup.ts"],
-  },
-  define: {
-    "import.meta.env.VITE_API_BASE_URL": JSON.stringify(
-      "http://localhost:3000"
-    ),
+    env: loadEnv("", process.cwd(), ""),
   },
 });

@@ -38,14 +38,21 @@ nvm use
    npm install
    ```
 
-3. Create a `.env.development` file:
+3. Create `.env.development` and `.env.test` files:
 
-   For local development, create a `.env.development` file in the root of the project. This file should contain any environment variables required for the application to run. For example:
+   - For local development, create a `.env.development` file in the root of the project. This file should contain any environment variables required for the application to run. For example:
 
-   ```env
-   VITE_NODE_ENV=development
-   VITE_API_BASE_URL=https://localhost:3000
-   ```
+     ```env
+     VITE_NODE_ENV=development
+     VITE_API_BASE_URL=https://development-api.local
+     ```
+
+   - For testing, create a `.env.test` file in the root of the project. This file should contain any environment variables required for running tests. For example:
+
+     ```env
+     VITE_NODE_ENV=development
+     VITE_API_BASE_URL=https://test-api.local
+     ```
 
 4. Start the development server:
 
