@@ -50,7 +50,7 @@ nvm use
    - For testing, create a `.env.test` file in the root of the project. This file should contain any environment variables required for running tests. For example:
 
      ```env
-     VITE_NODE_ENV=development
+     VITE_NODE_ENV=test
      VITE_API_BASE_URL=https://test-api.local
      ```
 
