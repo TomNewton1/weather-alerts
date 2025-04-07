@@ -1,54 +1,68 @@
-# React + TypeScript + Vite
+# National Weather Alerts Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a react application to display alerts from the National Weather Service API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[National Weather Service API](https://www.weather.gov/documentation/services-web-api#/)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Ensure you have the following installed:
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Using .nvmrc
+
+If you use `nvm` (Node Version Manager), you can run the following command to use the correct Node.js version specified in the `.nvmrc` file:
+
+```bash
+nvm use
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone the repository:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+   ```bash
+   git clone https://github.com/TomNewton1/weather-alerts.git
+   cd weather-alerts
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env.development` file:
+
+   For local development, create a `.env.development` file in the root of the project. This file should contain any environment variables required for the application to run. For example:
+
+   ```env
+   VITE_NODE_ENV=development
+   VITE_API_BASE_URL=https://localhost:3000
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the app in your browser at `http://localhost:5173`.
+
+## Mocking API Requests
+
+This project uses [Mock Service Worker (MSW)](https://mswjs.io/) to mock API requests during development and testing. The mock handlers are defined in [`src/mocks/handlers.ts`](src/mocks/handlers.ts).
+
+## Testing
+
+This project uses [Vitest](https://vitest.dev/) for unit testing. To run tests, use:
+
+```bash
+npm run test
 ```
