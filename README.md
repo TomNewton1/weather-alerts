@@ -6,6 +6,10 @@ This is a react application to display alerts from the National Weather Service 
 
 [National Weather Service API](https://www.weather.gov/documentation/services-web-api#/)
 
+You can see a live working example at: <https://weather-alerts-tom-newton.netlify.app/>
+
+![Dashboard Preview](dashboard-preview.png)
+
 ## Getting Started
 
 ### Prerequisites
